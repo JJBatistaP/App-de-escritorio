@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.PieChart?>
+
+<ScrollPane fitToWidth="true" pannable="true"
+            style="-fx-background-color: linear-gradient(to bottom, #f4f6f9 0%, #ffffff 100);"
+            xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.tienda.UtilitiesController">
+
+    <content>
+        <VBox spacing="20" style="-fx-padding: 40 20; -fx-background-color: transparent;">
+
+            <!-- TÍTULO -->
+            <Label fx:id="titleLabel"
+                   text="Utilidades Diarias"
+                   alignment="CENTER"
+                   maxWidth="1.7976931348623157E308"
+                   style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+
+            <!-- CARD IMPORTACIÓN -->
+            <VBox fx:id="uploadCard" alignment="CENTER" spacing="10"
+                  style="-fx-background-color: #ffffff;
+                         -fx-padding: 25;
+                         -fx-background-radius: 12;
+                         -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 6, 0, 0, 0);">
+
+                <Label text="Importar archivos"
+                       style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #27ae60;" />
+
+                <Button fx:id="fileBtn"
+                        text="Seleccionar archivos"
+                        onAction="#selectFiles"
+                        <?xml version="1.0" encoding="UTF-8"?>
+
+                        <?import javafx.scene.control.*?>
+                        <?import javafx.scene.layout.*?>
+                        <?import javafx.scene.chart.PieChart?>
+
+                        <ScrollPane fitToWidth="true" pannable="true" style="-fx-background-color: linear-gradient(to bottom, #f4f6f9 0%, #ffffff 100);" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tienda.UtilitiesController">
+                            <content>
+                                <VBox spacing="20.0" style="-fx-background-color: transparent; -fx-padding: 40 20;">
+                                    <children>
+                                        <!-- Título -->
+                                        <Label fx:id="titleLabel" alignment="CENTER" maxWidth="1.7976931348623157E308" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="Utilidades Diarias" VBox.vgrow="NEVER" />
+
+                                        <!-- Upload Card -->
+                                        <VBox fx:id="uploadCard" alignment="CENTER" spacing="10.0" style="-fx-background-color: #ffffff; -fx-border-radius: 12; -fx-background-radius: 12; -fx-padding: 25; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 6, 0, 0);" VBox.vgrow="NEVER">
+                                            <children>
+                                                <Label style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #27ae60;" text="Importar archivos" />
+                                                <Button fx:id="fileBtn" mnemonicParsing="false" onAction="#selectFiles" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 12 22; -fx-border-radius: 8; -fx-background-radius: 8;" text="Seleccionar archivos" />
+                                                <Button fx:id="calcBtn" disable="true" mnemonicParsing="false" onAction="#calculateUtilities" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 12 22; -fx-border-radius: 8; -fx-background-radius: 8;" text="Calcular utilidades" />
+                                            </children>
+                                        </VBox>
+
+                                        <!-- Loading -->
+                                        <VBox fx:id="loadingBox" alignment="CENTER" spacing="10.0" style="-fx-padding: 20;" visible="false" VBox.vgrow="NEVER">
+                                            <children>
+                                                <ProgressIndicator fx:id="loadingSpinner" prefHeight="45.0" prefWidth="45.0" />
+                                                <Label text="Procesando archivos..." />
+                                            </children>
+                                        </VBox>
+
+                                        <!-- Resultados -->
+                                        <VBox fx:id="resultadosWrapper" spacing="30.0" style="-fx-opacity: 0;" visible="false" VBox.vgrow="ALWAYS">
+                                            <children>
+                                                <!-- Chart Card -->
+                                                <VBox spacing="20.0" style="-fx-background-color: #ffffff; -fx-border-radius: 12; -fx-background-radius: 12; -fx-padding: 25; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 6, 0, 0, 0);" VBox.vgrow="ALWAYS">
+                                                    <children>
+                                                        <Label style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #27ae60;" text="Gráfica de Utilidad por Producto" />
+                                                        <!-- Controls -->
+                                                        <HBox fx:id="controls" spacing="10.0">
+                                                            <children>
+                                                                <Button fx:id="exportChartBtn" mnemonicParsing="false" onAction="#exportChartAsPNG" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-padding: 8 12;" text="Exportar Gráfica (PNG)" visible="false" />
+                                                                <CheckBox fx:id="toggleThemeBtn" mnemonicParsing="false" onAction="#toggleTheme" style="-fx-font-size: 14px;" text="Tema Oscuro" />
+                                                                <TextField fx:id="searchLegend" onAction="#filterLegend" promptText="Buscar producto..." style="-fx-padding: 8 12;" HBox.hgrow="ALWAYS" />
+                                                            </children>
+                                                        </HBox>
+                                                        <!-- Chart Wrapper -->
+                                                        <HBox fx:id="chartWrapper" spacing="28.0" alignment="CENTER_LEFT">
+                                                            <children>
+                                                                <VBox fx:id="chartContainer" HBox.hgrow="ALWAYS" alignment="CENTER">
+                                                                    <children>
+                                                                        <PieChart fx:id="pieChart" prefHeight="400.0" prefWidth="500.0" visible="false" />
+                                                                    </children>
+                                                                </VBox>
+                                                                <VBox fx:id="legendContainer" prefWidth="250.0" spacing="10.0" alignment="TOP_LEFT">
+                                                                    <children>
+                                                                        <Label text="Leyenda:" style="-fx-font-weight: bold;" />
+                                                                        <ScrollPane fitToWidth="true" prefHeight="350.0" style="-fx-background-color: transparent; -fx-border-color: #ddd; -fx-border-radius: 5;">
+                                                                            <content>
+                                                                                <VBox fx:id="legendVBox" spacing="8.0" style="-fx-padding: 10; -fx-background-color: rgba(255,255,255,0.8); -fx-border-radius: 5; -fx-background-radius: 5;">
+                                                                                    <children>
+                                                                                        <!-- Legend items will be added dynamically -->
+                                                                                    </children>
+                                                                                </VBox>
+                                                                            </content>
+                                                                        </ScrollPane>
+                                                                    </children>
+                                                                </VBox>
+                                                            </children>
+                                                        </HBox>
+                                                    </children>
+                                                </VBox>
+
+                                                <!-- Top 5 Mayor -->
+                                                <VBox spacing="15.0" style="-fx-background-color: #ffffff; -fx-border-radius: 12; -fx-background-radius: 12; -fx-padding: 25; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 6, 0, 0, 0);" VBox.vgrow="NEVER">
+                                                    <children>
+                                                        <Label style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #27ae60;" text="Top 5 Productos con Mayor Utilidad" />
+                                                        <TableView fx:id="top5Table" prefHeight="200.0">
+                                                            <columns>
+                                                                <TableColumn fx:id="top5ProductCol" prefWidth="300.0" text="Producto" />
+                                                                <TableColumn fx:id="top5UtilityCol" prefWidth="150.0" text="Utilidad" />
+                                                            </columns>
+                                                        </TableView>
+                                                    </children>
+                                                </VBox>
+
+                                                <!-- Top 5 Menor -->
+                                                <VBox spacing="15.0" style="-fx-background-color: #ffffff; -fx-border-radius: 12; -fx-background-radius: 12; -fx-padding: 25; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 6, 0, 0, 0);" VBox.vgrow="NEVER">
+                                                    <children>
+                                                        <Label style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #27ae60;" text="Top 5 Productos con Menor Utilidad" />
+                                                        <TableView fx:id="bottom5Table" prefHeight="200.0">
+                                                            <columns>
+                                                                <TableColumn fx:id="bottom5ProductCol" prefWidth="300.0" text="Producto" />
+                                                                <TableColumn fx:id="bottom5UtilityCol" prefWidth="150.0" text="Utilidad" />
+                                                            </columns>
+                                                        </TableView>
+                                                    </children>
+                                                </VBox>
+
+                                                <!-- File Results -->
+                                                <VBox fx:id="fileResults" spacing="15.0" />
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </VBox>
+                            </content>
+                        </ScrollPane>
+                      style="-fx-background-color: #ffffff;
+                             -fx-padding: 25;
+                             -fx-background-radius: 12;
+                             -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 6, 0, 0, 0);">
+
+                    <Label text="Top 5 Productos con Menor Utilidad"
+                           style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #27ae60;" />
+
+                    <TableView fx:id="bottom5Table" prefHeight="200">
+                        <columns>
+                            <TableColumn fx:id="bottom5ProductCol" text="Producto" prefWidth="300"/>
+                            <TableColumn fx:id="bottom5UtilityCol" text="Utilidad" prefWidth="150"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+
+                <!-- RESULTADOS POR ARCHIVO -->
+                <VBox fx:id="fileResults" spacing="15"/>
+
+            </VBox>
+        </VBox>
+    </content>
+</ScrollPane>

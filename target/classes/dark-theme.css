@@ -1,0 +1,250 @@
+/* Tema oscuro moderno para la aplicación Tienda */
+
+.root {
+    -fx-background-color: linear-gradient(to bottom, #1a202c 0%, #2d3748 100%);
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+
+.tab-pane {
+    -fx-tab-min-width: 140px;
+    -fx-tab-max-width: 140px;
+    -fx-background-color: rgba(255, 255, 255, 0.05);
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+}
+
+.tab {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-border-color: rgba(255, 255, 255, 0.2);
+    -fx-border-width: 1px;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 8 16;
+}
+
+.tab:selected {
+    -fx-background-color: rgba(255, 255, 255, 0.2);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 4, 0, 0, 2);
+}
+
+.tab-label {
+    -fx-text-fill: #e2e8f0;
+    -fx-font-weight: 600;
+    -fx-font-size: 13px;
+}
+
+.table-view {
+    -fx-background-color: rgba(45, 55, 72, 0.9);
+    -fx-border-color: #4a5568;
+    -fx-border-width: 2px;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 8, 0, 0, 4);
+}
+
+.table-view .column-header {
+    -fx-background-color: #2d3748;
+    -fx-text-fill: #e2e8f0;
+    -fx-font-weight: 600;
+    -fx-border-color: #4a5568;
+    -fx-border-width: 0 0 1 0;
+}
+
+.table-view .table-cell {
+    -fx-border-color: rgba(74, 85, 104, 0.3);
+    -fx-text-fill: #e2e8f0;
+    -fx-padding: 8;
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: #4a5568;
+}
+
+.table-view .table-row-cell:selected .table-cell {
+    -fx-text-fill: white;
+}
+
+.button {
+    -fx-background-color: linear-gradient(to right, #4a5568 0%, #718096 100%);
+    -fx-text-fill: #e2e8f0;
+    -fx-font-weight: 600;
+    -fx-border-radius: 25px;
+    -fx-background-radius: 25px;
+    -fx-padding: 12px 24px;
+    -fx-border-color: #718096;
+    -fx-border-width: 0;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 6, 0, 0, 3);
+    -fx-transition: all 0.3s ease;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(to right, #718096 0%, #a0aec0 100%);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 8, 0, 0, 4);
+}
+
+.button:pressed {
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0, 0, 6);
+}
+
+.button.danger-button {
+    -fx-background-color: linear-gradient(to right, #e53e3e 0%, #c53030 100%);
+}
+
+.button.danger-button:hover {
+    -fx-background-color: linear-gradient(to right, #c53030 0%, #9b2c2c 100%);
+}
+
+.label {
+    -fx-text-fill: #e2e8f0;
+    -fx-font-weight: 500;
+    -fx-font-size: 14px;
+}
+
+.vbox, .hbox {
+    -fx-spacing: 12px;
+}
+
+.text-field {
+    -fx-background-color: rgba(45, 55, 72, 0.8);
+    -fx-border-color: #4a5568;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-text-fill: #e2e8f0;
+    -fx-padding: 8 12;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 4, 0, 0, 2);
+}
+
+.text-field:focused {
+    -fx-border-color: #718096;
+    -fx-effect: dropshadow(gaussian, rgba(113, 128, 150, 0.3), 6, 0, 0, 3);
+}
+
+.list-view {
+    -fx-background-color: rgba(45, 55, 72, 0.9);
+    -fx-border-color: #4a5568;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 6, 0, 0, 3);
+}
+
+.list-view .list-cell {
+    -fx-text-fill: #e2e8f0;
+    -fx-padding: 10;
+    -fx-border-color: rgba(74, 85, 104, 0.2);
+    -fx-border-width: 0 0 1 0;
+}
+
+.list-view .list-cell:hover {
+    -fx-background-color: rgba(113, 128, 150, 0.2);
+    -fx-cursor: hand;
+}
+
+.list-view .list-cell:selected {
+    -fx-background-color: rgba(113, 128, 150, 0.3);
+}
+
+.pie-chart {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+.check-box {
+    -fx-text-fill: #e2e8f0;
+    -fx-font-weight: 500;
+}
+
+.check-box .box {
+    -fx-background-color: rgba(45, 55, 72, 0.8);
+    -fx-border-color: #4a5568;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+}
+
+.check-box:selected .mark {
+    -fx-background-color: #718096;
+}
+
+.progress-indicator {
+    -fx-progress-color: #718096;
+}
+
+/* Estilos para selección en gráfica en tema oscuro */
+.chart-series-line {
+    -fx-stroke-width: 3px;
+}
+
+.chart-series-line.selected {
+    -fx-stroke: #ff9800; /* Naranja para selección */
+    -fx-stroke-width: 4px;
+}
+
+.chart-bar.selected {
+    -fx-bar-fill: #ff9800; /* Naranja para barras seleccionadas */
+}
+
+.pie-chart .chart-pie.selected {
+    -fx-pie-color: #ff9800; /* Naranja para porciones seleccionadas */
+}
+
+/* Estilos para botones en celdas de tabla en modo oscuro */
+.table-cell .button {
+    -fx-padding: 4px 8px;
+    -fx-font-size: 11px;
+    -fx-min-width: 60px;
+    -fx-pref-width: 80px;
+    -fx-max-width: 100px;
+}
+
+.table-cell .button.danger-button {
+    -fx-background-color: #e53e3e;
+    -fx-text-fill: white;
+    -fx-font-weight: 600;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+}
+
+.table-cell .button.danger-button:hover {
+    -fx-background-color: #c53030;
+}
+
+/* ===========================================
+   CORRECCIONES PARA FONDO OSCURO CONSISTENTE FUERA DEL TABLEVIEW
+   =========================================== */
+
+/* Contenedor principal de la aplicación - asegura que el fondo raíz sea oscuro */
+.dark-theme .main-layout {
+    -fx-background-color: #1a202c; /* Fondo oscuro consistente para el layout principal */
+}
+
+/* Contenedor del toggle de tema - corrige fondo claro en el área del switch */
+.dark-theme .toggle-container {
+    -fx-background-color: #2d3748; /* Fondo oscuro para el contenedor del toggle */
+}
+
+/* Contenedor del TableView - corrige el fondo claro residual alrededor de la tabla */
+.dark-theme .table-container {
+    -fx-background-color: #2d3748; /* Fondo oscuro para el VBox que contiene la tabla y elementos asociados */
+}
+
+/* Área de contenido de las pestañas - elimina fondo claro en el área de contenido del TabPane */
+.dark-theme .tab-content-area {
+    -fx-background-color: #2d3748; /* Fondo oscuro para el área de contenido de las pestañas */
+}
+
+/* TabPane principal - asegura consistencia en el fondo del panel de pestañas */
+.dark-theme .main-tab-pane {
+    -fx-background-color: rgba(45, 55, 72, 0.9); /* Fondo oscuro semi-transparente para el TabPane */
+}

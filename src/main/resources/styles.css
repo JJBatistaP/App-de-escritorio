@@ -1,0 +1,243 @@
+/* ===========================================
+   NON-THEME-DEPENDENT STYLES
+   =========================================== */
+
+/* Root - Font family and transition */
+.root {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-transition: -fx-background-color 0.5s ease-in-out;
+}
+
+/* TabPane - Structure */
+.tab-pane {
+    -fx-tab-min-width: 140px;
+    -fx-tab-max-width: 140px;
+    -fx-border-width: 1px;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 6, 0, 0, 2);
+    -fx-transition: -fx-background-color 0.5s ease-in-out, -fx-border-color 0.5s ease-in-out;
+}
+
+/* Tabs - Structure */
+.tab {
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px 8px 0 0;
+    -fx-background-radius: 8px 8px 0 0;
+    -fx-padding: 10 18px;
+    -fx-transition: -fx-background-color 0.3s ease, -fx-border-color 0.3s ease;
+}
+
+.tab:hover {
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 6, 0, 0, 2);
+}
+
+.tab:selected {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 4, 0, 0, 1);
+}
+
+.tab-label {
+    -fx-font-weight: 600;
+    -fx-font-size: 13px;
+}
+
+/* TableView - Structure */
+.table-view {
+    -fx-border-width: 2px;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 3);
+    -fx-transition: -fx-background-color 0.5s ease-in-out, -fx-border-color 0.5s ease-in-out;
+}
+
+/* Table headers - Structure */
+.table-view .column-header {
+    -fx-font-weight: 600;
+    -fx-border-width: 0 0 1px 0;
+    -fx-padding: 12px;
+}
+
+.table-view .table-cell {
+    -fx-padding: 10px 12px;
+    -fx-border-width: 0 0 1px 0;
+}
+
+.table-view .table-row-cell {
+    -fx-border-width: 0 0 1px 0;
+}
+
+/* Buttons - Structure */
+.button {
+    -fx-font-weight: 600;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-padding: 10px 20px;
+    -fx-border-width: 0;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 4, 0, 0, 2);
+    -fx-cursor: hand;
+    -fx-transition: -fx-background-color 0.3s ease, -fx-scale-x 0.2s ease, -fx-scale-y 0.2s ease;
+}
+
+.button:hover {
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 6, 0, 0, 2);
+}
+
+.button:pressed {
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 8, 0, 0, 3);
+}
+
+/* Labels - Structure */
+.label {
+    -fx-font-weight: 500;
+    -fx-font-size: 14px;
+    -fx-transition: -fx-text-fill 0.5s ease-in-out;
+}
+
+/* Layout spacing */
+.vbox, .hbox {
+    -fx-spacing: 16px;
+}
+
+/* Text fields - Structure */
+.text-field {
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-padding: 8 12;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 3, 0, 0, 1);
+    -fx-transition: -fx-border-color 0.3s ease, -fx-background-color 0.3s ease;
+}
+
+.text-field:focused {
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 4, 0, 0, 2);
+}
+
+/* List views - Structure */
+.list-view {
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 4, 0, 0, 2);
+    -fx-transition: -fx-background-color 0.5s ease-in-out, -fx-border-color 0.5s ease-in-out;
+}
+
+.list-view .list-cell {
+    -fx-padding: 12px;
+    -fx-border-width: 0 0 1px 0;
+    -fx-transition: -fx-background-color 0.2s ease;
+}
+
+.list-view .list-cell:hover {
+    -fx-cursor: hand;
+}
+
+/* Charts - Structure */
+.pie-chart {
+    /* No specific structure */
+}
+
+/* Scroll panes - Structure */
+.scroll-pane {
+    /* No specific structure */
+}
+
+/* Checkboxes - Structure */
+.check-box {
+    -fx-font-weight: 500;
+    -fx-transition: -fx-text-fill 0.5s ease-in-out;
+}
+
+.check-box .box {
+    -fx-border-radius: 3px;
+    -fx-background-radius: 3px;
+    -fx-transition: -fx-background-color 0.3s ease, -fx-border-color 0.3s ease;
+}
+
+/* ===========================================
+   ADDITIONAL STYLES
+   =========================================== */
+
+/* Estilos para selección en gráfica */
+.chart-series-line {
+    -fx-stroke-width: 3px;
+}
+
+.chart-series-line.selected {
+    -fx-stroke-width: 4px;
+}
+
+.chart-bar.selected {
+    /* No specific structure */
+}
+
+.pie-chart .chart-pie.selected {
+    /* No specific structure */
+}
+
+/* Estilos para botones en celdas de tabla */
+.table-cell .button {
+    -fx-padding: 4px 8px;
+    -fx-font-size: 11px;
+    -fx-min-width: 60px;
+    -fx-pref-width: 80px;
+    -fx-max-width: 100px;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+}
+
+/* CheckBox del tema - Structure */
+.theme-toggle-checkbox {
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-padding: 10px 16px;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 4, 0, 0, 2);
+    -fx-cursor: hand;
+    -fx-transition: all 0.3s ease;
+}
+
+.theme-toggle-checkbox:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 6, 0, 0, 3);
+}
+
+.theme-toggle-checkbox .text {
+    -fx-font-family: "Segoe UI Emoji", "Segoe UI", sans-serif;
+}
+
+.theme-toggle-checkbox .box {
+    -fx-border-radius: 3;
+    -fx-background-radius: 3;
+}
+
+/* ===========================================
+   TABLE ROW SELECTION STYLES
+   =========================================== */
+
+/* Table row selection styles */
+.table-view .table-row-cell:selected {
+    -fx-background-color: -fx-accent;
+    -fx-text-fill: -fx-selection-bar-text;
+    -fx-border-color: -fx-accent;
+    -fx-border-width: 2px;
+    -fx-border-radius: 3px;
+}
+
+.table-view .table-row-cell:selected .table-cell {
+    -fx-text-fill: -fx-selection-bar-text;
+}
+
+/* Details panel styling */
+.details-panel {
+    -fx-border-color: #ccc;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-background-color: -fx-control-inner-background;
+    -fx-padding: 10px;
+}
